@@ -1,0 +1,2 @@
+export(dirSetF, dirShowF)
+importFrom(tibble, tribble, tibble)

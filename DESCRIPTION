@@ -1,0 +1,11 @@
+Package: directoryhelp
+Type: Package
+Title: Easily set the working directory for some common paths.
+Version: 0.2.0
+Author: David Dalenberg
+Maintainer: David Dalenberg <dalenbe2@gmail.com>
+Description: Set the working directory in less code, at least for a few common paths.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: tibble
