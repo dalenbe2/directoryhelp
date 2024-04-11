@@ -1,7 +1,7 @@
 
 
-workdirData <- tibble::tribble(
-
+workdirDataDavid <- tibble::tribble(
+  
   ~shortcut,       ~directory,
   'repository',      '~/Library/CloudStorage/Box-Box/Institutional Research/Data Repository',
   'datareq',         '~/Library/CloudStorage/Box-Box/Institutional Research/Data Requests',
@@ -9,23 +9,31 @@ workdirData <- tibble::tribble(
   'ir',              '~/Library/CloudStorage/Box-Box/Institutional Research',
   'box',             '~/Library/CloudStorage/Box-Box',
   'downloads',       '~/Downloads',
-  'bayesMeanScale',  '~/OneDrive/R Package Development/bayesMeanScale',
+  'bayesMeanScale',  '~/OneDrive/R Package Development/bayesMeanScale')
 
- #Ruby's Computer
-  'repository_rc', 'C:/Users/cheungr/Box/Institutional Research/Data Repository',
-  'datareq_rc',    'C:/Users/cheungr/Box/Institutional Research/Data Requests',
-  'retcalc_rc',    'C:/Users/cheungr/Box/Institutional Research/Retention',
-  'ir_rc',         'C:/Users/cheungr/Box/Institutional Research',
-  'box_rc',        'C:/Users/cheungr/Box/Institutional Research/Box',
-  'downloads_rc',  'C:/Users/cheungr/Downloads'
-
+workdirDataRuby <- tibble::tribble(
+  ~shortcut,       ~directory,
+  'repository',    'C:/Users/cheungr/Box/Institutional Research/Data Repository',
+  'datareq',    'C:/Users/cheungr/Box/Institutional Research/Data Requests',
+  'retcalc',    'C:/Users/cheungr/Box/Institutional Research/Retention',
+  'ir',         'C:/Users/cheungr/Box/Institutional Research',
+  'box',        'C:/Users/cheungr/Box/Institutional Research/Box',
+  'downloads',  'C:/Users/cheungr/Downloads'
 )
 
 dirSetF <- function(x){
-
-  x <- workdirData$directory[workdirData$shortcut == x]
-  setwd(x)
-
+  
+  workingDirectory <- getwd()
+  if (grepl('dalenbed', workingDirectory)) {
+    x <- workdirDataDavid$directory[workdirData$shortcut == x]
+    setwd(x)
+  } else if (grepl('rubycheung', workingDirectory)) {
+    x <- workdirDataRuby$directory[workdirDataRuby$shortcut == x]
+    setwd(x)
+  } else {
+    print("There is no directories for this user")
+  }
+  
 }
 
 dirShowF <- function(){
