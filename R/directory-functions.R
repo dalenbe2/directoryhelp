@@ -21,19 +21,18 @@ workdirDataRuby <- tibble::tribble(
   'downloads',  'C:/Users/cheungr/Downloads'
 )
 
-dirSetF <- function(x){
-  
+dirSetF <- function(x) {
   workingDirectory <- getwd()
+  
   if (grepl('dalenbed', workingDirectory)) {
-    x <- workdirDataDavid$directory[workdirData$shortcut == x]
+    x <- workdirDataDavid$directory[workdirDataDavid$shortcut == x]
     setwd(x)
-  } else if (grepl('rubycheung', workingDirectory)) {
+  } else if (grepl('cheungr', workingDirectory)) {
     x <- workdirDataRuby$directory[workdirDataRuby$shortcut == x]
     setwd(x)
   } else {
     print("There is no directories for this user")
   }
-  
 }
 
 dirShowF <- function(){
