@@ -9,7 +9,6 @@ workdirDataDavid <- tibble::tribble(
   'ir',              '~/Library/CloudStorage/Box-Box/Institutional Research',
   'box',             '~/Library/CloudStorage/Box-Box',
   'downloads',       '~/Downloads',
-  'bayesMeanScale',  '~/OneDrive/R Package Development/bayesMeanScale')
 
 workdirDataRuby <- tibble::tribble(
   ~shortcut,       ~directory,
@@ -25,11 +24,11 @@ dirSetF <- function(x) {
   workingDirectory <- getwd()
   
   if (grepl('dalenbed', workingDirectory)) {
-    x <- workdirDataDavid$directory[workdirDataDavid$shortcut == x]
-    setwd(x)
+    newDirectory <- workdirDataDavid$directory[workdirDataDavid$shortcut == x]
+    setwd(newDirectory)
   } else if (grepl('cheungr', workingDirectory)) {
-    x <- workdirDataRuby$directory[workdirDataRuby$shortcut == x]
-    setwd(x)
+    newDirectory <- workdirDataRuby$directory[workdirDataRuby$shortcut == x]
+    setwd(newDirectory)
   } else {
     print("There is no directories for this user")
   }
