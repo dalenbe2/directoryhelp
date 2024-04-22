@@ -30,12 +30,18 @@ dirSetF <- function(x) {
     newDirectory <- workdirDataRuby$directory[workdirDataRuby$shortcut == x]
     setwd(newDirectory)
   } else {
-    print("There is no directories for this user")
+    print("There are no directories for this user")
   }
 }
 
 dirShowF <- function(){
-
-  print(workdirData)
-
-}
+  workingDirectory <- getwd()
+  if (grepl('dalenbed', workingDirectory)){
+    print(workdirDataDavid)
+    } else if (grepl('cheungr', workingDirectory)){
+    print(workingDataRuby)
+    } else {
+    print("There are no directories for this user")
+    }
+  
+  }
