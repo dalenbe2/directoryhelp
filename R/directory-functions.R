@@ -8,7 +8,7 @@ workdirDataDavid <- tibble::tribble(
   'retcalc',         '~/Library/CloudStorage/Box-Box/Institutional Research/Retention',
   'ir',              '~/Library/CloudStorage/Box-Box/Institutional Research',
   'box',             '~/Library/CloudStorage/Box-Box',
-  'downloads',       '~/Downloads',
+  'downloads',       '~/Downloads')
 
 workdirDataRuby <- tibble::tribble(
   ~shortcut,       ~directory,
