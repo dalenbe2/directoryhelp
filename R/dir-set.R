@@ -6,7 +6,7 @@ dirSetF <- function(x) {
   if (grepl('dalenbed', workingDirectory)) {
     newDirectory <- workdirDataDavid$directory[workdirDataDavid$shortcut == x]
     setwd(newDirectory)
-  } else if (grepl('cheungr', workingDirectory)) {
+  } else if (grepl('rubyc', workingDirectory)) {
     newDirectory <- workdirDataRuby$directory[workdirDataRuby$shortcut == x]
     setwd(newDirectory)
   } else {
